@@ -1,3 +1,8 @@
+/*
+File: ConsolePacMan.cpp
+Built: 2011
+Author: fookenCode
+*/
 #include <iostream>
 using namespace std;
 #include <windows.h>
@@ -174,24 +179,24 @@ class PacGame {
            switch (wallGroupToTest)
            {
            case INNER:
-                if (toCompare == '⁄' || toCompare == 'ƒ' || toCompare == 'ø' ||
-                  toCompare == '≥' || toCompare == '¿' || toCompare == 'Ÿ')
+                if (toCompare == '√ö' || toCompare == '√Ñ' || toCompare == '¬ø' ||
+                  toCompare == '¬≥' || toCompare == '√Ä' || toCompare == '√ô')
                {
                   return true;
                }
                 break;
            case OUTER:
-                if (toCompare == '…' || toCompare == 'Õ' || toCompare == 'ª' ||
-                  toCompare == '∫' || toCompare == '»' || toCompare == 'º')
+                if (toCompare == '√â' || toCompare == '√ç' || toCompare == '¬ª' ||
+                  toCompare == '¬∫' || toCompare == '√à' || toCompare == '¬º')
                 {
                   return true;
                 }
                 break;
            case BOTH:
-                if (toCompare == '…' || toCompare == 'Õ' || toCompare == 'ª' ||
-                  toCompare == '∫' || toCompare == '»' || toCompare == 'º' ||
-                  toCompare == '⁄' || toCompare == 'ƒ' || toCompare == 'ø' ||
-                  toCompare == '≥' || toCompare == '¿' || toCompare == 'Ÿ')
+                if (toCompare == '√â' || toCompare == '√ç' || toCompare == '¬ª' ||
+                  toCompare == '¬∫' || toCompare == '√à' || toCompare == '¬º' ||
+                  toCompare == '√ö' || toCompare == '√Ñ' || toCompare == '¬ø' ||
+                  toCompare == '¬≥' || toCompare == '√Ä' || toCompare == '√ô')
                {
                   return true;
                }
@@ -229,7 +234,7 @@ class PacGame {
                     cout << "\t\t";
                  }
                  
-                 if (mapStrings[i][j] == '˘' || mapStrings[i][j] == '˙')
+                 if (mapStrings[i][j] == '√π' || mapStrings[i][j] == '√∫')
                  {
                     totalDots += 1;
                  }
@@ -272,7 +277,7 @@ class PacGame {
                        else
                        {
                            spaceToMove = mapStrings[yPos][xPos-movementSpeed];
-                           if (spaceToMove == '˘' || spaceToMove == '˙' || spaceToMove == ' ')
+                           if (spaceToMove == '√π' || spaceToMove == '√∫' || spaceToMove == ' ')
                            {
                               returnCase = true;
                            }
@@ -287,7 +292,7 @@ class PacGame {
                        else
                        {    
                            spaceToMove = mapStrings[yPos][xPos+movementSpeed];
-                           if (spaceToMove == '˘' || spaceToMove == '˙' || spaceToMove == ' ')
+                           if (spaceToMove == '√π' || spaceToMove == '√∫' || spaceToMove == ' ')
                            {
                               returnCase = true;
                            }
@@ -295,7 +300,7 @@ class PacGame {
                        break;
                   case UP:
                        spaceToMove = mapStrings[yPos-movementSpeed][xPos];
-                       if (spaceToMove == '˘' || spaceToMove == '˙' || spaceToMove == ' ')
+                       if (spaceToMove == '√π' || spaceToMove == '√∫' || spaceToMove == ' ')
                        {
                           returnCase = true;
                        }                    
@@ -308,7 +313,7 @@ class PacGame {
                        else
                        {
                            spaceToMove = mapStrings[yPos+movementSpeed][xPos];
-                           if (spaceToMove == '˘' || spaceToMove == '˙' || spaceToMove == ' ')
+                           if (spaceToMove == '√π' || spaceToMove == '√∫' || spaceToMove == ' ')
                            {
                               returnCase = true;
                            }
@@ -385,12 +390,12 @@ class PacGame {
                        else
                        {
                           mapStrings[yPos][xPos] = ' ';
-                          if (mapStrings[yPos][xPos-movementSpeed] == '˙')
+                          if (mapStrings[yPos][xPos-movementSpeed] == '√∫')
                           {
                              totalDots--;
                              score+=10;
                           }
-                          if (mapStrings[yPos][xPos-movementSpeed] == '˘')
+                          if (mapStrings[yPos][xPos-movementSpeed] == '√π')
                           {
                              totalDots--;
                              score+=50;
@@ -409,12 +414,12 @@ class PacGame {
                        }
                        else
                        {
-                          if (mapStrings[yPos][xPos+movementSpeed] == '˙')
+                          if (mapStrings[yPos][xPos+movementSpeed] == '√∫')
                           { 
                             totalDots--;
                             score+=10;
                           }
-                          if (mapStrings[yPos][xPos+movementSpeed] == '˘')
+                          if (mapStrings[yPos][xPos+movementSpeed] == '√π')
                           {
                              totalDots--;
                              score+=50;
@@ -425,12 +430,12 @@ class PacGame {
                        break;
                   case UP:
                        mapStrings[yPos][xPos] = ' ';
-                       if (mapStrings[yPos-movementSpeed][xPos] == '˙')
+                       if (mapStrings[yPos-movementSpeed][xPos] == '√∫')
                        {
                           totalDots--;
                           score+=10;
                        }
-                       if (mapStrings[yPos-movementSpeed][xPos] == '˘')
+                       if (mapStrings[yPos-movementSpeed][xPos] == '√π')
                        {
                           totalDots--;
                           score+=50;
@@ -440,12 +445,12 @@ class PacGame {
                        break;
                   case DOWN:
                        mapStrings[yPos][xPos] = ' ';
-                       if (mapStrings[yPos+movementSpeed][xPos] == '˙')
+                       if (mapStrings[yPos+movementSpeed][xPos] == '√∫')
                        {
                           totalDots--;
                           score+=10;
                        }
-                       if (mapStrings[yPos+movementSpeed][xPos] == '˘')
+                       if (mapStrings[yPos+movementSpeed][xPos] == '√π')
                        {
                           totalDots--;
                           score+=50;
